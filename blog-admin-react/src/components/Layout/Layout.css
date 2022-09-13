@@ -1,0 +1,14 @@
+.layout {
+    flex: 1;
+    display: flex;
+}
+
+.layout-slide {
+    width: 210px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.layout-main {
+    flex: 1;
+}

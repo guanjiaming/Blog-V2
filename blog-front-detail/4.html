@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="prism"/>
+    <meta name="Keywords" content="prism"/>
+    <title>prism</title>
+    <link rel="stylesheet" href="./css/prism.css">
+    <link rel="stylesheet" href="./css/detail.css">
+</head>
+<body>
+<header class="header">
+    <nav>
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="/blog/index.html"> 首页 </a>
+            </li>
+            <li class="nav-item">
+                <a href="/blog/articles.html"> 博客列表 </a>
+            </li>
+            <li class="nav-item">
+                <a href="/blog/about-me.html"> 关于 </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<section class="main">
+
+    <h1 class="heading">prism</h1>
+
+    <ul class="tags">
+        <li class="tag-item"><span>CSS3</span></li>
+        <li class="tag-item"><span>HTML</span></li>
+    </ul>
+
+    <p class="create-time">Tue Mar 01 05:22:31 CST 2022</p>
+
+    <div id="basic-usage" class="rich-text language-markup"><div data-language="java" class="toastui-editor-ww-code-block"><pre><code class="language-java">String str = "Uncle Mine";
+double d = 3.14;
+int i = 9;</code></pre></div></div>
+</section>
+<script>
+    const html = document.querySelector("#basic-usage").innerHTML;
+    document.querySelector("#basic-usage").innerHTML =  html.replace(/<pre><code data-language="/g, '<pre><code class="language-')
+</script>
+<script src="./js/prism.js"></script>
+<!--<script src="/blog/js/axios.js"></script>-->
+
+<script>
+    var ct = new Date(document.querySelector(".create-time").textContent);
+    var time_str = `${ct.getFullYear()}-${ct.getMonth()+1}-${ct.getDate()} ${ct.getHours()}:${ct.getMinutes()}:${ct.getSeconds()}`
+    document.querySelector(".create-time").textContent = time_str;
+    const articleId = /*4*/ "";
+    // 处理阅读+1
+    // const baseURL = "";
+    // axios.post(`/apis/addviews/${articleId}`)
+    // .then(res => {
+    //     console.log(res);
+    // }).catch(e => {
+    //   console.log(e);
+    // })
+</script>
+</body>
+</html>

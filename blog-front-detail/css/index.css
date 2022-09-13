@@ -1,0 +1,261 @@
+:root {
+    --main-color: teal;
+    --auxiliary-color: #ffe72a;
+    --white-color: #fff;
+    --text-color: #dcdcdc;
+    --grey-color: #bbb;
+    --warn-color: #cdb751;
+    --info-color: #a8c023;
+    --black-color: teal;
+}
+
+html {
+    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px;
+    word-spacing: 1px;
+    margin: 0;
+    padding: 0;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    color: var(--text-color);
+}
+
+html, body {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: teal url("../images/brick-wall-dark.png") repeat;
+    backdrop-filter: contrast(160%);
+}
+
+body,
+p {
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+}
+
+h1 {
+    font-family: '', 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 128px;
+    letter-spacing: 9px;
+    text-transform: uppercase;
+    margin: 18px 0 58px 0;
+    left: 4px;
+    color: var(--white-color);
+}
+
+h2 {
+    color: var(--grey-color);
+    font-weight: normal;
+    font-size: 15px;
+    letter-spacing: .12em;
+    margin-bottom: 30px;
+    left: 3px;
+}
+
+h1,
+h2 {
+    position: relative;
+}
+
+p {
+    font-size: 16px;
+    line-height: 2em;
+    margin: 10px 0;
+    letter-spacing: 2px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    color: var(--text-color);
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.link {
+    /*color: #999;*/
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    position: relative;
+    left: 2px;
+}
+
+.link:hover {
+    color: var(--auxiliary-color);
+}
+
+#loading {
+    font-size: 28px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--black-color);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#loading img {
+    width: 256px;
+    height: 256px;
+}
+
+#app {
+    position: relative;
+    min-width: 100%;
+    min-height: 100vh;
+}
+
+.background-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #222;
+    font-weight: 900;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 588px;
+    z-index: 1;
+    opacity: 0.15;
+    font-style: italic;
+}
+
+.page-home {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+
+.page-home .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 920px;
+    margin-top: -300px;
+    margin-left: -460px;
+}
+
+.page-home p {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.page-home .link {
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.page-home .link:hover {
+    color: var(--white-color);
+    left: -1px;
+}
+
+.page-home .link::after {
+    content: '>';
+    opacity: 0;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    position: relative;
+    right: 5px;
+}
+
+
+.page-home .link:hover::after {
+    opacity: 1;
+    right: -5px;
+}
+
+
+.page-home .icp {
+    position: absolute;
+    width: 100%;
+    letter-spacing: 1px;
+    bottom: 20px;
+    left: 0;
+    text-align: center;
+}
+
+.icp a {
+    color: var(--white-color);
+}
+
+/*页面2*/
+.page-resume {
+    /*background: #282c35 url("../images/brick-wall-dark.png") repeat;*/
+    /*backdrop-filter:  initial;*/
+}
+.main-inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-resume .icp {
+    position: relative;
+    text-align: center;
+}
+
+.icp a {
+    color: var(--white-color);
+}
+
+.resume {
+    padding-top: 20px;
+    border-top: 6px solid var(--auxiliary-color);
+}
+
+.name {
+    color: var(--white-color);
+    line-height: 30px;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+.page-resume .link:hover .desc {
+    color: var(--auxiliary-color);
+}
+.h {
+    color: var(--white-color);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.p {
+    color: var(--white-color);
+    font-size: 16px;
+    line-height: 2em;
+}
+
+.p .desc {
+    display: block;
+    opacity: 0.55;
+    font-size: 12px;
+    margin-top: -8px;
+    color: var(--text-color);
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.small-text {
+    font-size: 0.6em;
+}

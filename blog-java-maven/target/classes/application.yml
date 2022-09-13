@@ -1,0 +1,13 @@
+spring:
+  thymeleaf:
+    mode: HTML
+  profiles:
+    active: pro
+  jackson:
+    time-zone: GMT-8
+
+mybatis:
+  type-aliases-package: cn.guanjm.entity
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true

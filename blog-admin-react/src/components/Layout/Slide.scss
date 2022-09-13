@@ -1,0 +1,43 @@
+.layout-slide {
+  font-size: 14px;
+  color: #fff;
+  background: teal;
+
+  .admin_name {
+    line-height: 60px;
+    box-sizing: border-box;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    border-bottom: 1px solid #005959;
+  }
+}
+
+.layout-slide-menu {
+
+  li {
+    line-height: 40px;
+
+    a {
+      display: block;
+      transition: background,color 0.3s;
+      padding-left: 26px;
+      color: #fff;
+
+      &:hover {
+        font-weight: bold;
+        color: #ffd500;
+      }
+    }
+
+    a.cur {
+      background: #ffd500;
+      font-weight: bold;
+      color: teal;
+    }
+  }
+}
+
+.layout-slide-menu-item {
+  line-height: 20px;
+}

@@ -1,0 +1,97 @@
+:root {
+    --main-color: #299999;
+    --white-color: #fff;
+    --text-color: #a0aabf;
+    --grey-color: #bbb;
+    --warn-color: #cdb751;
+    --info-color: #a8c023;
+    --black-color: rgb(0, 0, 0);
+}
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    min-height: 100vh;
+    padding-bottom: 30px;
+    background: teal url("../images/brick-wall-dark.png") repeat;
+    backdrop-filter: contrast(160%);
+}
+
+.header {
+    border-bottom: 1px solid #fff;
+    margin-bottom: 30px;
+}
+
+.main {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 30px 40px;
+    background-color: #fff;
+    border-radius: 20px;
+    /*min-height: calc(100vh - 188px);*/
+    filter: contrast(100%);
+}
+
+img {
+    border: 0;
+    vertical-align: top;
+}
+
+.heading {
+    margin-bottom: 10px;
+    font-weight: 900;
+}
+
+.create-time {
+    color: var(--warn-color);
+    font-size: 12px;
+    margin-bottom: 30px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tag-item {
+    padding: 5px 8px;
+    background: var(--main-color);
+    color: var(--white-color);
+    border-radius: 8px;
+    font-size: 12px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+
+pre {
+    border-radius: 10px;
+}
+
+.nav-list {
+    max-width: 880px;
+    margin: 0 auto;
+    display: flex;
+    height: 88px;
+    padding: 0 5px;
+}
+
+.nav-item {
+    padding: 0 15px;
+    line-height: 88px;
+}
+
+.nav-item:hover {
+    /*background: #35D7BB;*/
+}
+
+.nav-item a {
+    color: var(--white-color);
+}
+
+a:hover {
+    color: var(--main-color);
+}

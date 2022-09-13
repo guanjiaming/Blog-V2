@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.guanjm.dao.ArticleDao">
+
+    <!-- 查询博客列表 -->
+    <select id="queryArticleList" resultType="cn.guanjm.entity.Article">
+        <choose>
+            <when test="keywords != null">
+                <bind name="pattern" value="'%' + keywords + '%'" />
+            </when>
+            <otherwise>
+                <bind name="pattern" value="'%%'" />
+            </otherwise>
+        </choose>
+
+        select id,title,views, user_id, create_time from tb_article
+        <if test="keywords != null">
+            where title like  #{pattern}
+        </if>
+
+        <if test="sortBy != null">
+            order by #{sortBy}
+            <if test="desc == true">
+                desc
+            </if>
+            <if test="desc != true">
+                asc
+            </if>
+        </if>
+    </select>
+
+    <!-- 查询博客详情 -->
+    <select id="queryArticleDetail" resultType="cn.guanjm.entity.Article">
+        select * from tb_article where id = #{id}
+    </select>
+
+    <!-- 新增博客 -->
+    <insert id="saveArticle" parameterType="cn.guanjm.entity.Article" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        insert into tb_article(title, content, views, is_recommend, is_publish, create_time, update_time, user_id)
+        values(#{title}, #{content}, #{views}, #{isRecommend}, #{isPublish}, NOW(), NOW(), #{userId})
+    </insert>
+
+    <!-- 新增中间表 当前文章关联的tags -->
+    <insert id="insertArticleIdAndTagId">
+        insert into tb_tag_article(tag_id, article_id) values (#{tid}, #{aid})
+    </insert>
+
+    <!-- 中间表 删除关联的tag -->
+    <delete id="deleteTagIdsByArticleId">
+        delete from tb_tag_article where article_id = #{articleId}
+    </delete>
+
+<!--    <resultMap id="tagIdList" type="List">-->
+<!--        <result property="tagId" column="tag_id"/>-->
+<!--    </resultMap>-->
+    <!--中间表 查询当前文章关联的tags-->
+    <select id="getTagIdsByAid" resultType="Long">
+        select tag_id from tb_tag_article where article_id = #{id}
+    </select>
+
+    <!-- 编辑博客 -->
+    <update id="updateArticle" parameterType="cn.guanjm.entity.Article">
+        update tb_article
+        set title = #{title}, content = #{content}, is_recommend = #{isRecommend}, is_publish = #{isPublish}, update_time = NOW()
+        where id = #{id}
+    </update>
+
+    <!-- 删除 -->
+    <delete id="deleteArticle">
+        delete from tb_article where id = #{id}
+    </delete>
+
+
+    <!--文章访问自增-->
+    <update id="updateViews">
+        update tb_article set views = views+1 where id= #{id}
+    </update>
+    <!-- 博客统计 -->
+    <select id="getArticleTotal">
+        select count(*) from tb_article
+    </select>
+    <select id="getBlogViewTotal" resultType="Integer">
+        select sum(views) from tb_article
+    </select>
+</mapper>

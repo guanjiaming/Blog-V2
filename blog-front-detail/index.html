@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Uncle Ming</title>
+</head>
+<body>
+
+<div id="app">
+    <main id="main" class="main page-home">
+        <div class="container">
+            <h1>Uncle Ming</h1>
+            <p>
+<!--                <a class="link" target="_blank" href="http://blog.guanjm.cn">Blogs</a>-->
+                <a class="link" target="_blank" href="./list/articles.html">Blogs</a>
+            </p>
+            <p>
+                <a class="link" target="_blank" href="./about.html">About</a>
+            </p>
+        </div>
+        <p class="icp"><a href="http://beian.miit.gov.cn" target="_blank">京ICP备xxxxxxx号</a></p>
+    </main>
+    <div id="bg-year" class="background-number">2019</div>
+</div>
+
+<div id="loading">
+    <img src="./images/loading-cylon.svg" alt="loading">
+</div>
+<script>
+    document.querySelector("#bg-year").textContent = String(new Date().getFullYear());
+    // document.readystatechange = function () {
+    //     // "complete" | "interactive" | "loading"
+    //     // document.readyState === "complete"
+    // }
+    window.addEventListener("load", function () {
+        document.querySelector("#loading").style.display = "none";
+    })
+
+</script>
+</body>
+</html>
